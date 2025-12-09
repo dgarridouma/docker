@@ -1,0 +1,13 @@
+FROM ubuntu
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt update
+RUN apt -y dist-upgrade
+RUN apt -y install apache2
+RUN apt -y install net-tools
+RUN apt -y install nano
+RUN apt -y install curl
+RUN apt -y install nmap
+RUN echo 'Imagen construida con un Dockerfile' \
+	> /var/www/html/index.html
+EXPOSE 80
+CMD ["apachectl", "-D", "FOREGROUND"]

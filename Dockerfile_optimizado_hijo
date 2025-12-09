@@ -1,0 +1,7 @@
+FROM optimizado
+
+RUN apt-get update && \
+    apt-get install -y git htop && \
+    rm -rf /var/lib/apt/lists/*
+
+CMD ["python", "-c", "print('Contenedor derivado con git y htop')"]

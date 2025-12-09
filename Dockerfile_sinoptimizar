@@ -1,0 +1,6 @@
+FROM python:3.11-slim
+
+RUN apt-get update
+RUN apt-get install -y curl
+RUN pip install flask requests
+CMD ["python", "-c", "print('Hola desde un contenedor sin optimizar')"]
